@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ "$1" == "" ]; then
+	echo "lock [--mode -m MODE]"
+	echo "Lock Options - Permissions Locker"
+	echo "-m --mode      Specify the mode. Is a required parameter."
+	echo "MODE           The mode to use. Must be either lock or unlock."
+	exit
+fi
+
+if [ ! "$USER" == "root" -o ! "$UID" == "0" ]; then
+	echo error: you are not root
+	exit
+fi
+
+if [ "$1" == "-m" -o "$1" == "--mode" ]; then
+	export mode=$2
+fi
+
+if [ "$mode" == "lock" ]; then
+	./chmod -x /bin/chmod
+fi
+
+if [ "$mode" == "unlock" ]; then
+	./chmod +x /bin/chmod
+fi

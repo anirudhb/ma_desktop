@@ -1,0 +1,64 @@
+if __name__ == '__main__':
+    while True:
+        nav = ['password system','list gui']
+        print 'Your choices are:',nav[0],',',nav[1],'or exit.'
+        user = raw_input('Section:')
+        if user == nav[0]:
+            from Tkinter import *
+
+            def GetValue():
+                    password = ent.get()
+                    if password == 'Elaine':
+                        button['bg'] = 'green'
+                        lab['text'] = 'Correct Password!'
+                    else:
+                        lab['text'] = 'Wrong password.'
+                        button['bg'] = 'red'
+
+            root = Tk()
+            root.title('Password System')
+            root.geometry('200x200')
+
+
+
+            lab = Label(root, text = 'Password')
+            ent = Entry(root, bg = 'white')
+            button = Button(root, text = 'Enter Password', command = GetValue)
+    
+
+            ent.focus()
+
+            lab.pack(anchor = W)
+            ent.pack(anchor = W)
+            button.pack(anchor = E)
+
+
+            root.mainloop()
+        elif user == nav[1]:
+            from tkinter import *
+
+            def Insert():
+                    name = text.get()
+                    list.insert(2, name)
+                    text.delete(0,END)	
+
+            root = Tk()
+            root.title('List add GUI')
+            root.geometry('400x600')
+
+            text = Entry(root, bg = 'white')
+            button = Button(root, text = "add to list", command = Insert)
+
+            list = Listbox(root, bg = 'green', fg = 'gray')
+
+
+            text.pack(anchor = W)
+            button.pack(padx = 4, pady = 4, anchor= E)
+
+            list.pack()
+
+
+            root.mainloop()
+        elif user == 'exit':
+            while True:
+                raise SystemExit('User exited.')

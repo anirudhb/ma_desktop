@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>
+			Test
+		</title>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script>
+			function sleep(ms) {
+				function do_nothing() {
+					return;
+				}
+				for (i=0;i<(ms);i++) {
+					do_nothing();
+				}
+			}
+			function incrementBar() {
+				var bar = $("progress");
+				for (i=1;i!=101;i++) {
+					bar.val(bar.val()+1);
+					sleep(1000);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<progress value="0" max="100"></progress>
+		<button onclick="javascript:incrementBar()">Start</button>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PySimpVM Docs - /vm/math.py</title>
+</head>
+<body>
+<p><em>math.py</em></p>
+<p><em>Objects defined here:</em></p>
+<ul>
+	<li><p>Function:<pre><code>def add(stack):
+	topush = stack[-1] + stack[-2]
+	stack.pop()
+	stack.pop()
+	stack.append(topush)
+	</code></pre></p></li>
+	<li><p>Function:<pre><code>def subtract(stack):
+	topush = stack[-1] - stack[-2]
+	stack.pop()
+	stack.pop()
+	stack.append(topush)
+	</code></pre></p></li>
+	<li><p>Function:<pre><code>def divide(stack):
+	topush = stack[-1] / stack[-2]
+	stack.pop()
+	stack.pop()
+	stack.append(topush)
+	</code></pre></p></li>
+	<li><p>Function:<pre><code>def multiply(stack):
+	topush = stack[-1] * stack[-2]
+	stack.pop()
+	stack.pop()
+	stack.append(topush)
+	</code></pre></p></li>
+</ul>
+<p>&copy;Anirudh Balaji</p>
+</body>
+</html>

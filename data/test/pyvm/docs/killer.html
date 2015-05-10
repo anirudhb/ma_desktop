@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PySimpVM Docs - /vm/killer.py</title>
+</head>
+<body>
+<p><em>killer.py</em></p>
+<p><em>Objects defined here:</em></p>
+<ul>
+	<li><p>Function: <pre><code>kill_process(proc):
+	import sys
+	from os import system as cmd
+	if sys.platform != "win32":
+		cmd("kill -9 " + proc)
+	else:
+		from warnings import error
+		error("error: kill_process not supported on windows")
+		return
+	</code></pre></p></li>
+</ul>
+
+<p>&copy;Anirudh Balaji</p>
+</body>
+</html>

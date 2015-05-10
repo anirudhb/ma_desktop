@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>HTML</title>
+		<meta charset="utf-8">
+		<style>
+		div#codearea {
+			width: 100%;
+			height: 45%;
+		}
+		div#preview {
+			width: 100%;
+			height: 45%;
+			word-wrap: break-word;
+		}
+		textarea#code {
+			width: 100%;
+			height: 100%;
+			font-family: "Courier New", Courier, monospace;
+		}
+		code {
+			background-color: rgba(100, 100, 100, 0.5);
+			font-weight: bold;
+		}
+		.important {
+			font-weight: bold;
+			font-style: uppercase;
+		}
+		.rightnow {
+			color: red;
+		}
+		</style>
+		<script src="https://rawgit.com/emmetio/textarea/master/emmet.min.js">
+		</script>
+		<script>
+			emmet.require("textarea").setup({
+				pretty_break: true,
+				use_tab: true
+			});
+			function showHtml() {
+				// doTabs(e);
+				var codeObj = document.getElementById("code").value;
+				var htmlObj = document.getElementById("preview");
+				htmlObj.innerHTML = "<html>" + codeObj + "</html>";
+			};
+			// function enableTab(id) {
+			//     var el = document.getElementById(id);
+			//     el.keypress = function(e) {
+			//         if (String.fromCharCode(e.charCode) == "\t") { // tab was pressed
+			//
+			//             // get caret position/selection
+			//             var val = this.value,
+			//                 start = this.selectionStart,
+			//                 end = this.selectionEnd;
+			//
+			//             // set textarea value to: text before caret + tab + text after caret
+			//             this.value = val.substring(0, start) + '\t' + val.substring(end);
+			//
+			//             // put caret at right position again
+			//             this.selectionStart = this.selectionEnd = start + 1;
+			//
+			//             // prevent the focus lose
+			//             e.preventDefault();
+			//
+			//         }
+			// 	};
+			// };
+			// var GetRandomInt = function () {
+			// 	return Math.random()*Math.random()*Math.random()*Math.random();
+			// }
+			// function doTabs(e) {
+			// 	if (e.charCode == 9) {
+			// 		// get caret position/selection
+			// 		var val = this.value,
+			// 		          start = this.selectionStart,
+			// 		          end = this.selectionEnd;
+			// 		// set textarea value to: text before caret + tab + text after caret
+			// 		this.value = val.substring(0, start) + '\t' + val.substring(end);
+			// 		// put caret at right position again
+			// 		this.selectionStart = this.selectionEnd = start + 1;
+			// 		// prevent the focus lose
+			// 		e.preventDefault();
+			// 	}
+			// }
+		</script>
+	</head>
+	<body>
+		<div id="codearea">
+		<textarea id="code" placeholder="Put your code here..." onkeyup="showHtml()" class="emmet-syntax-html"></textarea>
+		</div>
+		<hr>
+		<div id="preview">
+		</div>
+	</body>
+</html>

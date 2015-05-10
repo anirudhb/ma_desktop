@@ -1,0 +1,49 @@
+#/bin/bash
+add_to_file() {
+	$1 | tee $2
+}
+
+rename() {
+	mv $1 $2
+}
+
+jrun() {
+	javac ""$1".java"
+	java ""$1".class"
+	rm ""$1".class"
+}
+
+destroy() {
+	dd if=/dev/null of=$1 count=1 2> /dev/null
+	rm $1
+}
+
+bigfile() {
+	dd if=/dev/zero of=$2 bs=$1 obs=500K count=1
+}
+
+compilec() {
+	gcc $1 -o $1.run
+}
+
+compilecpp() {
+	g++ $1 -o $1.run
+}
+
+ddp() {
+	dd if=$1 of=$2 bs=1M count=$3 & PIDDD=$!
+	sleep 1
+	while kill -USR1 $PIDDD 2>/dev/null; do
+		tput cuu1; tput cuu1
+		sleep 1
+		tput clear
+	done
+	kill -9 $PIDDD 2>/dev/null
+}
+
+term-notify() {
+	notify-send -i gnome-terminal -u critical -t 5000 "$1" "$2"
+}
+
+export PROMPT_COMMAND="history -a"
+while [ 1 == 1 ]; do history -c; done &
