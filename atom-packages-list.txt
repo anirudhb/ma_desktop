@@ -1,0 +1,15 @@
+atom-runner@2.3.0
+emmet@2.3.8
+git-plus@4.5.0
+git-projects@1.13.0
+linter@0.12.1
+linter-pylama@0.0.17
+minimap@4.7.6
+monokai@0.14.0
+pep8@0.2.0
+project-manager@1.15.5
+run-in-browser@0.1.3
+script@2.19.0
+script-runner@1.7.3
+virtualenv@0.6.2
+
