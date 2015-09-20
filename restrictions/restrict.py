@@ -5,8 +5,8 @@ def lock():
     window = gtk.Window()
     window.connect("destroy", gtk.main_quit)
     window.set_keep_above(True)
-    window.maximize()
-    window.title("Gtk-Maximized-Always-On-Top-Restrictions")
+    window.fullscreen()
+    window.title("Restrictions-Gtk-Fullscreen")
     window.show_all()
     gtk.main()
 
